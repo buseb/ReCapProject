@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -10,45 +11,42 @@ using System.Text;
 namespace Business.Concrete
 {
     public class UserManager : IUserService
-
     {
         IUserDal _userDal;
 
-        public UserManager(IUserDal userService)
+        public UserManager(IUserDal userDal)
         {
-            _userDal = userService;
+            _userDal = userDal;
         }
 
-        public IResult Add(User user)
+        public List<OperationClaim> GetClaims(User user)
+        {
+            return _userDal.GetClaims(user);
+        }
+
+        public void Add(User user)
         {
             _userDal.Add(user);
-            return new SuccessResult(Messages.CarAdded);
         }
 
-        public IResult Delete(int userId)
+        public User GetByMail(string email)
         {
-            var result = _userDal.Get(p => p.Id == userId);
-            _userDal.Delete(result);
-            return new SuccessResult(Messages.CarDeleted);
+            return _userDal.Get(u => u.Email == email);
         }
 
-        public IDataResult<List<User>> GetAll()
+        public List<Core.Entities.Concrete.OperationClaim> GetClaims(User user)
         {
-            var result = _userDal.GetAll();
-            return new SuccessDataResult<List<User>>(result, Messages.CarsListed);
+            throw new NotImplementedException();
         }
 
-        public IDataResult<User> GetUserId(int userId)
+        public void Add(User user)
         {
-            var result = _userDal.Get(p => p.Id == userId);
-            return new SuccessDataResult<User>(result, Messages.CarDeleted);
+            throw new NotImplementedException();
         }
 
-        public IResult Update(int userId)
+        User IUserService.GetByMail(string email)
         {
-            var result = _userDal.Get(p => p.Id == userId);
-            _userDal.Update(result);
-            return new SuccessDataResult<User>(result, Messages.CarDeleted);
+            throw new NotImplementedException();
         }
     }
 }
