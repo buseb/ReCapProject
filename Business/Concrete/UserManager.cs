@@ -34,16 +34,6 @@ namespace Business.Concrete
             return _userDal.Get(u => u.Email == email);
         }
 
-        public List<Core.Entities.Concrete.OperationClaim> GetClaims(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Add(User user)
-        {
-            throw new NotImplementedException();
-        }
-
         User IUserService.GetByMail(string email)
         {
             throw new NotImplementedException();

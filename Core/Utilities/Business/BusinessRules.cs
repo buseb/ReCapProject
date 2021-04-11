@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Utilities.Results;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace Core.Utilities.Business
 {
     public class BusinessRules
     {
-        public static IAsyncResult Run(Results.IResult result, params IAsyncResult[] logics)
+        public static IResult Run(Results.IResult result, params IResult[] logics)
         {
             foreach(var logic in logics)
             {

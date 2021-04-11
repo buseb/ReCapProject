@@ -11,7 +11,6 @@ using DataAccess.Concrete.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using static Core.Utilities.Security.JWT.JWTHelper;
 
 namespace Business.DependencyResolvers.Autofac
 {

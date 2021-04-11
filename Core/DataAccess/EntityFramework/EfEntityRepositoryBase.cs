@@ -50,10 +50,7 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        public List<TEntity> GetById(Expression<Func<TEntity, bool>> filter = null)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public void Update(TEntity entity)
         {
@@ -65,5 +62,6 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
+        
     }
 }
