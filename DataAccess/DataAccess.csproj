@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="10.0.2" />
+    <PackageReference Include="Arch.EntityFrameworkCore.SqlServer" Version="2.1.15" />
+    <PackageReference Include="FluentValidation" Version="10.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.12" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
   </ItemGroup>

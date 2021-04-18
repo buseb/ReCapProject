@@ -9,7 +9,7 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
     <PackageReference Include="Core.Extensions" Version="0.6.0" />
-    <PackageReference Include="FluentValidation" Version="10.0.2" />
+    <PackageReference Include="FluentValidation" Version="10.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.5" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />

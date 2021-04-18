@@ -38,5 +38,10 @@ namespace Business.Concrete
         {
             throw new NotImplementedException();
         }
+
+        IDataResult<List<User>> IUserService.GetAll()
+        {
+            return new SuccessDataResult<List<User>>(_userDal.GetAll());
+        }
     }
 }
