@@ -22,6 +22,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core.Utilities.Security.Encryption;
 using Microsoft.IdentityModel.Tokens;
+using System.IO;
+using Microsoft.Extensions.FileProviders;
 
 namespace WebAPI
 {
@@ -74,24 +76,33 @@ namespace WebAPI
         }
 
 
-    
 
-    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors(builder => builder.WithOrigins("http://localhost:4200/").AllowAnyHeader());
+            app.UseCors(builder => builder.WithOrigins("http://localhost:44312/").AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(env.ContentRootPath, "Resources")),
+                RequestPath = "/Resources"
+ });
             app.UseRouting();
+            app.UseAuthentication(); 
 
-            app.UseAuthorization();
-
+            app.UseAuthorization(); //yetki --> token
+                                    
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
