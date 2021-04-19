@@ -40,6 +40,7 @@ namespace Business.Constants
         public static string UserDeleted = "Kullanıcı silindi";
         public static string UsersListed = "Kullanıcılar Listelendi";
         public static string UserUpdated = "Kullanıcı Güncellendi";
+        public static string ImageAdded = "Resim eklendi";
 
         public static string CarImageLimitExceeded = "More than 5 images cannot be added";
         public static string NoCarImages = "The car does NOT have any images";
@@ -51,6 +52,7 @@ namespace Business.Constants
         public static string SuccessfulLogin = "Başarılı giriş";
         public static string UserAlreadyExists = "Kullanıcı mevcut";
         public static string AccessTokenCreated = "Token oluşturuldu";
+
 
        
     }
